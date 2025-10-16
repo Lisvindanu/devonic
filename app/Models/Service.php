@@ -11,6 +11,8 @@ class Service extends Model
         'name',
         'slug',
         'description',
+        'featured_image',
+        'images',
         'icon',
         'is_active',
         'is_featured',
@@ -20,6 +22,7 @@ class Service extends Model
     protected $casts = [
         'is_active' => 'boolean',
         'is_featured' => 'boolean',
+        'images' => 'array',
     ];
 
     public function portfolios(): HasMany

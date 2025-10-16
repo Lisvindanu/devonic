@@ -36,8 +36,9 @@
         <nav class="container mx-auto px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div>
-                    <a href="/" class="text-2xl font-bold tracking-tight text-black hover:text-gray-700 transition">
-                        DEVONIC
+                    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition">
+                        <img src="{{ asset('assets/DEVONIC LOGO ICON (1).png') }}" alt="Devonic" class="h-10 w-auto">
+                        <span class="text-2xl font-bold tracking-tight text-black">DEVONIC</span>
                     </a>
                 </div>
 

@@ -49,6 +49,25 @@ class ServiceResource extends Resource
                             ->helperText('Nama class icon (contoh: heroicon-o-code-bracket)'),
                     ])
                     ->columns(2),
+                Forms\Components\Section::make('Gambar')
+                    ->schema([
+                        Forms\Components\FileUpload::make('featured_image')
+                            ->label('Gambar Utama')
+                            ->image()
+                            ->directory('services')
+                            ->maxSize(2048)
+                            ->helperText('Upload gambar utama layanan (max 2MB)')
+                            ->columnSpanFull(),
+                        Forms\Components\FileUpload::make('images')
+                            ->label('Galeri Gambar')
+                            ->image()
+                            ->multiple()
+                            ->directory('services/gallery')
+                            ->maxSize(2048)
+                            ->maxFiles(5)
+                            ->helperText('Upload maksimal 5 gambar untuk galeri (max 2MB per file)')
+                            ->columnSpanFull(),
+                    ]),
                 Forms\Components\Section::make('Pengaturan')
                     ->schema([
                         Forms\Components\Toggle::make('is_active')

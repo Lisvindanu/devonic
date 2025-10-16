@@ -7,10 +7,7 @@
 <section class="min-h-screen flex items-center justify-center bg-white px-6 lg:px-8">
     <div class="container mx-auto max-w-6xl text-center">
         <div class="mb-12">
-            <svg class="w-24 h-24 mx-auto mb-8" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="45" stroke="black" stroke-width="2"/>
-                <path d="M50 25L50 75M30 50L70 50" stroke="black" stroke-width="2" stroke-linecap="round"/>
-            </svg>
+            <img src="{{ asset('assets/DEVONIC LOGO ICON (1).png') }}" alt="Devonic Logo" class="w-32 h-32 mx-auto mb-8 object-contain">
         </div>
         <h1 class="text-6xl md:text-8xl lg:text-9xl font-black tracking-tight mb-8 leading-none">
             DEVONIC
