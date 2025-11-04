@@ -52,17 +52,18 @@
                     </div>
                     <div class="text-left lg:text-right lg:min-w-[200px]">
                         <div class="text-5xl font-black mb-6">
-                            @if($package->price > 0)
-                                Rp {{ number_format($package->price / 1000000, 0) }}jt
+                            @if($package->category === 'donation')
+                                DONASI SEIKHLASNYA
+                            @elseif($package->price_min > 0 && $package->price_max > 0)
+                                @if($package->price_min === $package->price_max)
+                                    Rp {{ number_format($package->price_min / 1000000, 1) }}jt
+                                @else
+                                    Rp {{ number_format($package->price_min / 1000000, 1) }}jt - {{ number_format($package->price_max / 1000000, 1) }}jt
+                                @endif
                             @else
                                 GRATIS
                             @endif
                         </div>
-                        @if($package->original_price && $package->original_price > $package->price)
-                        <div class="text-lg {{ $package->is_featured ? 'text-gray-400' : 'text-gray-500' }} line-through mb-6">
-                            Rp {{ number_format($package->original_price / 1000000, 0) }}jt
-                        </div>
-                        @endif
                         <a href="{{ isset($settings['contact_whatsapp']) ? 'https://wa.me/' . preg_replace('/[^0-9]/', '', $settings['contact_whatsapp']->value) . '?text=Halo, saya tertarik dengan paket ' . urlencode($package->name) : route('contact') }}"
                            class="inline-block {{ $package->is_featured ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white hover:bg-gray-800' }} px-8 py-4 text-sm font-medium transition w-full lg:w-auto text-center">
                             PILIH PAKET
